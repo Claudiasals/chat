@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+h1 {
+    color: white;
+}
+
+
+span {
+    color: white;
+}
+
+.homepage-header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.homepage-header-top i {
+    color: #e6dafb;
+    font-size: 35px;
+}
+
+.homepage-body i {
+    color: #300082;
+    font-size: 35px;
+}
+
+
+.homepage-header-start {
+    display: flex;
+flex-direction: column;
+gap: 20px; 
+}
+
+
+.homepage-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;      
+    gap: 16px;
+    /* spazio tra le icone */
+}
+
+.homepage-header-center {
+display: flex;
+flex-direction: column; 
+gap: 20px; 
+
+}
+
+.homepage-header-center-title {
+    display: flex;
+    align-items: center;  
+   
+}
+
+.homepage-header-center-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+.homepage-header-center-buttons button {
+    color: white;        
+    background-color: transparent; 
+    border: 1px solid rgb(250, 250, 250); 
+    border-radius: 15px;          
+    font-size: 16px;    
+    padding: 10px;  
+    
+  }
+
+  /* effetto hover */
+.homepage-header-center-buttons button:hover {
+    background-color: rgb(168, 136, 255);   /* sfondo rosa al passaggio */
+    color: white;             /* testo resta bianco */
+    border-color: pink;       /* bordo rosa */
+  }
+  
+
+.homepage-body {
+    display: flex;
+    flex-direction: column; /* i figli vanno in colonna */
+    gap: 12px;              /* spazio verticale tra archive e chat */
+}
+
+
+.homepage-body-archive {
+    display: flex;
+    align-items: center;
+    padding: 5px;    
+    gap: 15px;
+}
+
+.homepage-body-chat {
+display: flex;
+align-items: center;
+padding: 5px;  
+gap: 15px;
+
+}
+
+/* trasformo l’immagine in un avatar circolare */
+.homepage-body-chat img {
+    width: 50px;              /* larghezza fissa */
+    height: 50px;             /* altezza fissa */
+    object-fit: cover;        /* ritaglia la foto senza deformarla */
+    border-radius: 50%;       /* trasforma il box in cerchio */
+  }
+
+.divider {
+    height: 1px; /* spessore della riga */
+    width: 90%; /* tutta la larghezza */
+    background: linear-gradient(to right, #2200a9, #7905bc); /* blu → viola */
+    margin: 8px auto; /* auto a sinistra e destra = centrato */  }
+  
+
+.chat-header {
+    display: flex;
+}
+
+/* trasformo l’immagine in un avatar circolare */
+.chat-header img {
+    width: 50px;              /* larghezza fissa */
+    height: 50px;             /* altezza fissa */
+    object-fit: cover;        /* ritaglia la foto senza deformarla */
+    border-radius: 50%;       /* trasforma il box in cerchio */
+  }
+  
+
+header,
+footer {
+    padding: 8px 32px;
+    height: 100%;
+    background:  linear-gradient(to right, #7905bc, #2200a9); /* sfumatura da viola scuro a viola chiaro */
+}
+
+/* regole di stile della chat */
+.chat-box {
+    padding: 32px;
+    height: calc(100dvh - 140px);
+    /* su smartphone dvh? */
+    background-color: #ddc6f1;
+    overflow-y: auto;
+    /* mette barra su asse y */
+}
+
+/* sfondo */
+.chat-box {
+    background-image: url("img/sfondo-chat.png"); /* tua immagine */
+    background-size: cover;       /* copre tutta l’area */
+    background-position: center;  /* centrata */
+    background-repeat: no-repeat; /* non si ripete */
+    overflow-y: auto;             /* scroll della chat */
+    padding: 32px;
+    height: calc(100dvh - 120px);  /* spazio tra header e footer */  /* fallback */
+    height: calc(100dvh - 120px);  /* preferito su mobile */
+  }
+  
+.chat-header {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center; /* centra verticalmente immagine e testo */    
+    gap: 15px;
+
+}
+
+.chat-header p {
+    font-size: 24px;
+    color: white;
+}
+
+.chat-header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.chat-header-icons {
+    display: flex;
+    gap: 20px;
+}
+  
+.chat-header-icons i {
+    color: #ffffff;
+    font-size: 35px;
+}
+
+.chat-row {
+    display: flex;
+    margin: 15px; 
+}
+
+.chat-row.sent {
+    justify-content: flex-end;
+    
+}
+
+.chat-row.received {
+    justify-content: flex-start;
+}
+
+.chat-message {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+}
+
+.chat-row.sent>.chat-message {
+    /* che è? */
+    background-color: #e5d3ff;
+
+}
+
+/* Nascondere scrollbar ma mantenere lo scroll */
+.chat-box {
+  overflow-y: scroll;          /* abilita lo scroll verticale */
+  scrollbar-width: none;       /* Firefox */
+}
+
+.chat-box::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Edge */
+}
+
+
+time {
+    font-size: 11px;
+    color: #aaaaaa;
+}
+
+
+
+input {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+
+
+/* Bottom bar */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+   
+}
+
+footer i {
+    color: #ffffff;
+    font-size: 35px;
+}
+
