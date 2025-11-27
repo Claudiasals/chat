@@ -64,23 +64,6 @@ span {
     /* trasforma il box in cerchio */
 }
 
-
-
-
-/* regole di stile della chat */
-.chat-box {
-    padding: 32px;
-    flex: 1;
-    /* prende tutto lo spazio rimanente */
-    margin: 0 4px;
-    /* stesso distacco laterale del header/footer */
-    overflow-y: auto;
-    background-image: none;
-    /* o cancella la proprietà */
-    overflow-y: auto;
-    /* mette barra su asse y */
-}
-
 .header-homepage {
     height: 180px;
 }
@@ -102,23 +85,6 @@ main {
     /* non si ripete */
     overflow-y: auto;
     /* scroll della chat */
-}
-
-
-/* sfondo */
-.chat-box {
-    background-size: cover;
-    /* copre tutta l’area */
-    background-position: center;
-    /* centrata */
-    background-repeat: no-repeat;
-    /* non si ripete */
-    overflow-y: auto;
-    /* scroll della chat */
-    padding: 0px;
-    height: calc(100dvh - 140px);
-    /* spazio tra header e footer */
-    /* fallback . preferito su mobile? aveva scritto questa riga doppia?! in che sens? */
 }
 
 .chat-header {
@@ -194,13 +160,30 @@ main {
 
 }
 
-/* Nascondere scrollbar ma mantenere lo scroll */
+
+/* regole di stile della chat */
 .chat-box {
+    padding: 32px;
+    flex: 1;  /* prende tutto lo spazio rimanente */
+    margin: 0 4px;  /* stesso distacco laterale del header/footer */
+    background-image: none;  /* sfondo */
+    background-size: cover; /* copre tutta l’area */
+    background-position: center; /* centrata */
+    background-repeat: no-repeat; /* non si ripete */
+    overflow-y: auto;  /* scroll della chat */
+    padding: 0px;
+   /* height: calc(100dvh - 140px); /* spazio tra header e footer */
+    /* fallback . preferito su mobile? aveva scritto questa riga doppia?! in che sens? */
+
+/* Nascondere scrollbar ma mantenere lo scroll */
     overflow-y: scroll;
     /* abilita lo scroll verticale */
     scrollbar-width: none;
     /* Firefox */
 }
+
+
+
 
 .chat-box::-webkit-scrollbar {
     display: none;
@@ -271,8 +254,9 @@ input::placeholder {
 button {
     border: none;
     background-color: transparent;
-}
+    transition: color 0.2s ease; /* rende gradevole il cambio */
 
+}
 
 
 /* Bottom bar */
@@ -281,7 +265,6 @@ footer {
     justify-content: space-between;
     align-items: center;
     gap: 32px;
-
 }
 
 footer i {
@@ -289,6 +272,9 @@ footer i {
     font-size: 35px;
 }
 
+footer i:hover {
+border: #2200a9;
+}
 
 
 /* ? HOMEPAGE N*/
