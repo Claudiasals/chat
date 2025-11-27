@@ -234,7 +234,7 @@ input {
     width: 100%;
     font-size: 16px;
     padding: 8px 16px;
-    border-radius: 12px;
+    border-radius: 20px;
     /* angoli arrotondati */
     border: none;
     background: rgba(250, 249, 249, 0.2);
