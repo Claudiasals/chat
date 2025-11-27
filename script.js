@@ -44,7 +44,9 @@ button.addEventListener("click", function () {
     // controllo che l'input non sia vuoto
     if (!insertedText) return; // se l’input è vuoto, la funzione si interrompe subito
 
-    addMessage();
+    addMessage("sent", insertedText); /* metto sent come primo parametro perché 
+    al click posso soltanto invare quindi posso già specificare "sent" */
+    
     // svuuoto chat
     chatBox.innerHTML = "";
 
@@ -78,6 +80,7 @@ function showMessages() {
     }
 }
 
+// fuunzione per aggiungere un messaggio 
 function addMessage(messageType, messageText) {
     // creo un nuovo messaggio
     const newMessage = {
@@ -87,7 +90,7 @@ function addMessage(messageType, messageText) {
     }
     // aggiungo msg alla lista messaggi
     messages.push(newMessage) // il nuovo oggetto viene aggiunto all'array come 3 oggetto.
-    // mostra i msg in chat
+    // mostro il msg in chat
     showMessages()
 }
 
