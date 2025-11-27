@@ -34,7 +34,7 @@ chatBox.innerHTML = "";
 showMessages();
 
 
-// @ OPERAZIONI DI INTERAZIONE CON L'UTENTE
+// ? OPERAZIONI DI INTERAZIONE CON L'UTENTE
 
 // al click del bottone invia il msg inserito nell'input dall'utente
 button.addEventListener("click", function () {
@@ -45,7 +45,8 @@ button.addEventListener("click", function () {
     if (!insertedText) return; // se l’input è vuoto, la funzione si interrompe subito
 
     addMessage("sent", insertedText); /* metto sent come primo parametro perché 
-    al click posso soltanto invare quindi posso già specificare "sent" */
+    al click posso soltanto invare quindi posso già specificare "sent".
+     */
     
     // svuuoto chat
     chatBox.innerHTML = "";
@@ -58,7 +59,20 @@ button.addEventListener("click", function () {
     // e riporto il cursore nell'input
     input.focus()
 
+    // scorro in automatico alla fine del box per vedere gli ultimi msg al posto dei primi
+    chatBox.scrollTop = chatBox.scrollHeight
+    // gli stiamo dicendo scotti in lunghezza la barra quanto è alta la chatBox
 });
+
+// alla pressione del tasto "invio" sulla tastiera del pc invia il messaggio
+
+input.addEventListener("keydown", function (event) {
+    if(event.key === "Enter") sendMessage()
+        /* event.key ci dice che tasto stiamo schiacciando
+     === enter significa che se il tasto che stiamo schiacciando 
+     è enter allora eseguo la funzione "sendMessage"(invio msg)*/
+    });
+
 
 // ? FUNZIONI UTILI
 
@@ -97,3 +111,28 @@ function addMessage(messageType, messageText) {
 // esempio per capire la logica:
 addMessage("received", "allora quando ci vediamo?")
 addMessage("sent", "venerdì sera??")
+
+
+// funzione  per inviare un messaggio dall'input 
+function sendMessage () {
+    // recupero il testo inserito dall'utente
+    const insertedText = input.value; // prendo il testo inserito nell'input
+    console.log(insertedText)
+
+    // controllo che l'input non sia vuoto
+    if (!insertedText) return; // se l’input è vuoto, la funzione si interrompe subito
+
+    // aggiungi il msg in pagina
+    addMessage("sent", insertedText); 
+    /* metto sent come primo parametro perché 
+    al click posso soltanto invare quindi posso già specificare "sent" */
+    
+    // svuoto la casella input dopo aver inviato il messaggio
+    input.value = ""
+    // e riporto il cursore nell'input
+    input.focus()
+
+    // scorro in automatico alla fine del box per vedere gli ultimi msg al posto dei primi
+    chatBox.scrollTop = chatBox.scrollHeight
+    // gli stiamo dicendo scotti in lunghezza la barra quanto è alta la chatBox
+};
