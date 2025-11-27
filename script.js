@@ -100,7 +100,8 @@ function addMessage(messageType, messageText) {
     const newMessage = {
         type: messageType,
         text: messageText,
-        time: new Date().toLocaleString()
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        /* new Date().toLocaleTimeString  in automatico ci da data e ora, aggiungo l'oggetto perché voglio soltanto l'orario*/
     }
     // aggiungo msg alla lista messaggi
     messages.push(newMessage) // il nuovo oggetto viene aggiunto all'array come 3 oggetto.
