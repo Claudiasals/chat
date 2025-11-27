@@ -253,8 +253,6 @@ input::placeholder {
 button {
     border: none;
     background-color: transparent;
-    transition: color 0.2s ease; /* rende gradevole il cambio */
-
 }
 
 /* Bottom bar */
